@@ -1,1 +1,118 @@
-dashboard
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raj Mini Store Admin</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0a1035;
+color:white;
+}
+
+.header{
+background:#111a4d;
+padding:15px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+padding:15px;
+}
+
+.card{
+background:#18245e;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:10px;
+border:none;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#ff2ea6;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+}
+
+.stats{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.stat{
+background:#18245e;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+h3{
+margin-top:0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🛒 Raj Mini Store Admin Panel
+</div>
+
+<div class="container">
+
+<div class="stats">
+<div class="stat">
+<h2>0</h2>
+Products
+</div>
+
+<div class="stat">
+<h2>0</h2>
+Orders
+</div>
+</div>
+
+<div class="card">
+<h3>Add Product</h3>
+
+<input type="text" placeholder="Product Name">
+
+<input type="number" placeholder="Price">
+
+<input type="text" placeholder="Image URL">
+
+<button>Add Product</button>
+</div>
+
+<div class="card">
+<h3>Recent Orders</h3>
+<p>No Orders Yet</p>
+</div>
+
+<div class="card">
+<h3>Customer Messages</h3>
+<p>No Messages Yet</p>
+</div>
+
+</div>
+
+</body>
+  </html>
