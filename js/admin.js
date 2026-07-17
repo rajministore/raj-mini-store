@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
 
-      const { data, error } = await supabase
+      const { data, error } = await window.supabaseClient
         .from("products")
         .insert([
           {
