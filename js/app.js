@@ -1,1 +1,1 @@
-console.log("Raj Mini Store");
+console.log("Raj Mini Store Loaded");
