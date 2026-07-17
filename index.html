@@ -79,21 +79,76 @@ Best Quality • Best Price • Trusted Store
 
 <div class="hero">
 
-<h2>Welcome To Raj Mini Store</h2>
+  <div style="padding:20px;">
+<h2>Our Products</h2>
 
-<p>
-Home Essentials<br>
-Cosmetics<br>
-Jewellery<br>
-Mobile Accessories<br>
-Daily Use Products
-</p>
+<div id="products"
+style="
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+">
+Loading Products...
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabase = window.supabase.createClient(
+"https://kpswfoxhfnqcqfiybttb.supabase.co",
+"sb_publishable_UM1grvRRMosVkHtBh-D74g_JnYEjj5P"
+);
+
+async function loadProducts(){
+
+const { data, error } = await supabase
+.from("products")
+.select("*")
+.order("id",{ascending:false});
+
+if(error){
+document.getElementById("products").innerHTML =
+"Products Load Error";
+return;
+}
+
+let html = "";
+
+data.forEach(product => {
+
+html += `
+<div style="
+background:#18245e;
+padding:15px;
+border-radius:12px;
+">
+
+<img src="${product.image_url}"
+style="
+width:100%;
+border-radius:10px;
+">
+
+<h3>${product.name}</h3>
+
+<p>₹${product.price}</p>
 
 <button class="btn">
-Shop Now
+Buy Now
 </button>
 
 </div>
+`;
+
+});
+
+document.getElementById("products").innerHTML = html;
+}
+
+loadProducts();
+</script>
 
 <div class="bottom">
 <div>🏠 Home</div>
